@@ -1,0 +1,268 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+}
+body{
+    background-color: rgb(25, 22, 22);
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+  
+    
+}
+
+.box-container{
+    width: 400px;
+    height: 100px;
+    color: white;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: serif;
+    position: relative;
+    padding: 5px;
+   
+  
+}
+
+.box{
+    width: 400%;
+    height: 100%;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(34, 32, 32);
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: serif;
+    
+}
+
+@property --angle{
+   syntax: "<angle>";
+   initial-value: 0deg;
+   inherits: false;
+}
+
+.box::after, .box::before{
+  
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 70%, #ff4545,#00ff99,#006aff,#ff0095);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    border-radius: 10px;
+    animation: 2s spin linear infinite;
+}
+
+@keyframes spin{
+    from{
+        --angle:0deg;
+    }
+
+    to{
+        --angle:360deg;
+    }
+}
+.box::before{
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+
+.A::before{
+    content: '';
+    animation-name: A;
+    animation-timing-function: linear;
+    animation-duration: 0.8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;  
+    animation-delay: 2s;
+
+}
+@keyframes A{
+    0%{
+        content: 'A';
+        color:  blue;
+    }
+    20%{
+        content: 'K';
+        color:  palevioletred;
+        
+    }
+    40%{
+        content: 'A';
+        color:  green;
+    }
+    60%{
+        content: 'S';
+        color:  yellow;
+    }
+    80%{
+        content: 'H';
+        color:  paleturquoise;
+    }
+    100%{
+        content: 'A';
+        color: palevioletred;
+        font-family: cursive;
+    }
+}
+.K::before{
+    content: '';
+    animation-name: K;
+    animation-timing-function: linear;
+    animation-duration: 0.8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;  
+    animation-delay: 2.8s;
+}
+@keyframes K{
+    0%{
+        content: 'A';
+        color: rgb(178, 32, 78);
+    }
+    20%{
+        content: 'K';
+        color: rgb(178, 154, 32);
+    }
+    40%{
+        content: 'A';
+        color: rgb(59, 32, 178);
+    }
+    60%{
+        content: 'S';
+        color: rgb(148, 240, 10); 
+    }  
+    80%{
+        content: 'H';
+        color: rgb(235, 5, 55);
+    }
+    100%{
+        content: 'K';
+        color: lightseagreen;
+        font-family: cursive;
+    }
+
+}
+.A1::before{
+    content: '';
+    animation-name: A1;
+    animation-timing-function: linear;
+    animation-duration: 0.8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; 
+    animation-delay: 3.6s; 
+}
+@keyframes A1{
+    0%{
+        content: 'A';
+        color: rgb(12, 102, 247);
+    }
+    20%{
+        content: 'K';
+        color: rgb(255, 0, 132);
+    }
+    40%{
+        content: 'A';
+        color: rgb(0, 255, 149);
+    }
+    60%{
+        content: 'S';
+        color: rgb(247, 0, 255);
+    }
+    80%{
+        content: 'H';
+        color: rgb(255, 0, 0);
+    }
+    100%{
+        content: 'A';
+        color: rgb(255, 149, 0);
+        font-family: cursive;
+    }
+}
+.S::before{
+    content: '';
+    animation-name: S;
+    animation-timing-function: linear;
+    animation-duration: 0.8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 4.2s;  
+}
+@keyframes S{
+    0%{
+        content: 'A';
+        color: purple;
+    }
+    20%{
+        content: 'K';
+        color: purple;
+    }
+    40%{
+        content: 'A';
+        color: purple;
+    }
+    60%{
+        content: 'S';
+        color: purple;
+    }
+    80%{
+        content: 'H';
+        color: purple;
+    }
+    100%{
+        content: 'S';
+        color: purple;
+        font-family: cursive;
+    }
+}
+.H::before{
+    content: '';
+    animation-name: H;
+    animation-timing-function: linear;
+    animation-duration: 0.8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 4.8s;  
+}
+@keyframes H{
+    0%{
+        content: 'A';
+        color: red;
+    }
+    20%{
+        content: 'K';
+        color: red;
+    }
+    40%{
+        content: 'A';
+        color: red;
+    }
+    60%{
+        content: 'S';
+        color: red;
+    }
+    80%{
+        content: 'H';
+        color: blueviolet;
+    }
+    100%{
+        content: 'H';
+        color: rgb(140, 0, 255);
+        font-family: cursive;
+    }
+}
+
